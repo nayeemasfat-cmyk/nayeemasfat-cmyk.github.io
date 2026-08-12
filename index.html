@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nayeem Asfat - Portfolio</title>
+    <!-- Google Fonts for Stylish Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #0b111e;
-            color: #ffffff;
+            background-color: #0d1117;
+            color: #e6edf3;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             line-height: 1.6;
         }
 
@@ -22,60 +24,69 @@
         nav {
             position: sticky;
             top: 0;
-            background-color: rgba(11, 17, 30, 0.95);
+            background-color: rgba(13, 17, 23, 0.9);
+            backdrop-filter: blur(10px);
             padding: 15px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-bottom: 1px solid #1a233a;
+            border-bottom: 1px solid #30363d;
             z-index: 1000;
         }
 
         .logo {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 24px;
-            font-weight: bold;
-            color: #00a2ff;
-            margin-bottom: 12px;
+            font-weight: 700;
+            color: #58a6ff;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
         }
 
         .nav-links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             list-style: none;
             overflow-x: auto;
             max-width: 100%;
-            padding-bottom: 5px;
         }
 
         .nav-links a {
-            color: #a0aec0;
+            color: #8b949e;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
-        .nav-links a.active, .nav-links a:hover {
-            color: #00a2ff;
-            border-bottom: 2px solid #00a2ff;
+        .nav-links a:hover, .nav-links a.active {
+            color: #58a6ff;
         }
 
-        /* Hero Section */
+        /* Container */
         .container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        .profile-img-container {
-            margin: 20px auto;
-            width: 220px;
-            height: 220px;
+        .profile-card {
+            background: #161b22;
+            border: 1px solid #30363d;
             border-radius: 20px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .profile-img-container {
+            margin: 0 auto 20px auto;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
             overflow: hidden;
-            border: 1px solid #1e293b;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border: 3px solid #58a6ff;
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
         }
 
         .profile-img-container img {
@@ -84,169 +95,145 @@
             object-fit: cover;
         }
 
-        .tag {
-            display: inline-block;
-            background-color: #111e38;
-            color: #38bdf8;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            letter-spacing: 1px;
-            margin: 15px 0 10px 0;
-            border: 1px solid #1d3557;
-        }
-
-        .subtitle {
-            color: #94a3b8;
-            font-size: 16px;
+        .greeting {
+            color: #79c0ff;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
         }
 
         .name {
-            font-size: 32px;
-            font-weight: 800;
-            margin: 5px 0;
-            color: #f8fafc;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #f0f6fc;
+            margin-bottom: 5px;
         }
 
         .role {
-            font-size: 20px;
-            color: #64748b;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .divider {
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
-            margin: 0 auto 20px auto;
-            border-radius: 2px;
+            font-size: 18px;
+            color: #8b949e;
+            font-weight: 400;
+            margin-bottom: 20px;
         }
 
         .bio {
-            color: #cbd5e1;
+            color: #c9d1d9;
             font-size: 15px;
             margin-bottom: 30px;
         }
 
         /* Buttons */
-        .btn-container {
+        .btn-group {
             display: flex;
-            flex-direction: column;
-            gap: 12px;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
             margin-bottom: 30px;
         }
 
-        .btn-gradient {
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
-            color: #000;
-            padding: 14px;
-            border-radius: 30px;
+        .btn-primary {
+            background-color: #238636;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
         }
 
-        .btn-outline {
-            background: transparent;
-            color: #e2e8f0;
-            padding: 14px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            border: 1px solid #334155;
+        .btn-primary:hover {
+            background-color: #2ea043;
         }
 
-        /* Skills Badges */
+        .btn-secondary {
+            background-color: #21262d;
+            color: #c9d1d9;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid #30363d;
+            transition: 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #30363d;
+            color: #f0f6fc;
+        }
+
+        /* Skill Badges */
+        .skills-title {
+            font-size: 14px;
+            color: #8b949e;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .skills {
             display: flex;
             justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 30px;
         }
 
         .skill-badge {
-            background-color: #1e293b;
-            color: #cbd5e1;
-            padding: 8px 18px;
+            background-color: #21262d;
+            color: #58a6ff;
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 13px;
-            border: 1px solid #334155;
-        }
-
-        /* Feature Box */
-        .card {
-            background-color: #0f172a;
-            border: 1px solid #1e293b;
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .card h4 {
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: #f1f5f9;
-        }
-
-        .card p {
-            color: #94a3b8;
-            font-size: 13px;
+            border: 1px solid #30363d;
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navbar -->
+    <!-- Header Navigation -->
     <nav>
-        <div class="logo">Nayeem</div>
+        <div class="logo">Nayeem Asfat</div>
         <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#about" class="active">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
+    <!-- Main Profile Card -->
     <div class="container">
-        <!-- Profile Image -->
-        <div class="profile-img-container">
-            <img src="profile.jpg" alt="Profile Picture">
-        </div>
+        <div class="profile-card">
+            
+            <div class="profile-img-container">
+                <img src="profile.jpg" alt="Profile Picture">
+            </div>
 
-        <div class="tag">PORTFOLIO</div>
-        
-        <div class="subtitle">Hello, I'm</div>
-        <h1 class="name">Nayeem Asfat</h1>
-        <div class="role">Computer Science Student</div>
-        
-        <div class="divider"></div>
+            <div class="greeting">Hello, World! I'm</div>
+            <h1 class="name">Nayeem Asfat</h1>
+            <div class="role">Computer Science & Engineering Student</div>
 
-        <p class="bio">
-            Computer Science & Engineering student at Bangladesh University of Professionals (BUP), building intelligent apps with clean design and fast performance.
-        </p>
+            <p class="bio">
+                Passionate about software development, system architecture, and building efficient digital solutions. Currently pursuing B.Sc. in CSE at Bangladesh University of Professionals.
+            </p>
 
-        <!-- Action Buttons -->
-        <div class="btn-container">
-            <a href="mailto:your-email@gmail.com" class="btn-gradient">Hire Me</a>
-            <a href="cv.pdf" target="_blank" class="btn-outline">Download CV</a>
-        </div>
+            <!-- Action Buttons without 'Hire Me' -->
+            <div class="btn-group">
+                <a href="mailto:your-email@gmail.com" class="btn-primary">Contact Me</a>
+                <a href="cv.pdf" target="_blank" class="btn-secondary">View CV</a>
+            </div>
 
-        <!-- Skills Pills -->
-        <div class="skills">
-            <span class="skill-badge">Java</span>
-            <span class="skill-badge">Web Apps</span>
-            <span class="skill-badge">AI Projects</span>
-        </div>
+            <div class="skills-title">Focus Areas</div>
+            <div class="skills">
+                <span class="skill-badge">Software Engineering</span>
+                <span class="skill-badge">Web Development</span>
+                <span class="skill-badge">Problem Solving</span>
+            </div>
 
-        <!-- Cards -->
-        <div class="card">
-            <h4>Fast Deployment</h4>
-            <p>Responsive work with polished interactions and optimized structure.</p>
         </div>
     </div>
 
